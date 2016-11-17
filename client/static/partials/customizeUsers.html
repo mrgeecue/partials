@@ -1,0 +1,26 @@
+<div ng-controller="CustomizeUsersController">
+    <form class="form-inline">
+        <input type='text' class="input-group" ng-model='newUser.firstName' placeholder="First Name"/>
+        <input type='text' class="input-group" ng-model='newUser.lastName' placeholder="Last Name"/>
+        <input type='text' class="input-group" ng-model='newUser.language' placeholder="Favorite Language"/>
+        <button class='btn btn-primary' ng-click='create()'>Create User</button>
+    </form>
+
+    <table class="table table-striped">
+       <thead>
+           <tr>
+               <th>First Name</th>
+               <th>Last Name </th>
+               <th>Favorite Language </th>
+           </tr>
+       </thead>
+       <tbody>
+           <tr ng-repeat="user in users">
+               <td>{{user.firstName}}</td>
+               <td>{{user.lastName}}</td>
+               <td>{{user.language}}</td>
+               <td><input class="btn btn-danger" ng-click='delete($index)' type="submit" value="Delete User" </td>
+           </tr>
+       </tbody>
+  </table>
+</div>
